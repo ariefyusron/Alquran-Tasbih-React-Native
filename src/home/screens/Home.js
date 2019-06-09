@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, TouchableHighlight } from 'react-native';
+import { View, Text, StyleSheet, TouchableHighlight, Image } from 'react-native';
 
 class Home extends Component {
   render() {
@@ -7,16 +7,30 @@ class Home extends Component {
       <View style={styles.container}>
         <View style={{ flexDirection: 'row', justifyContent: 'space-around' }}>
           <TouchableHighlight
+            underlayColor="#e4e4e4"
             style={styles.button}
             onPress={() => this.props.navigation.navigate('Quran', { title: 'Al-Quran' })}
           >
-            <Text>Al-Quran</Text>
+            <View style={{ alignItems: 'center' }}>
+              <Image
+                source={require('../../public/assets/icon/koran-icon.svg.hi.png')}
+                style={{ width: 70, height: 50, marginBottom: 10 }}
+              />
+              <Text>Al-Quran</Text>
+            </View>
           </TouchableHighlight>
           <TouchableHighlight
+            underlayColor="#e4e4e4"
             style={styles.button}
             onPress={() => this.props.navigation.navigate('Tasbih', { title: 'Tasbih' })}
           >
-            <Text>Tasbih</Text>
+            <View style={{ alignItems: 'center' }}>
+              <Image
+                source={require('../../public/assets/icon/ea94539b59d5003b4e00b78906833479-tasbih-rosary-islam-stroke-icon-by-vexels.png')}
+                style={{ width: 50, height: 50, marginBottom: 10 }}
+              />
+              <Text>Tasbih</Text>
+            </View>
           </TouchableHighlight>
         </View>
       </View>
