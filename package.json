@@ -6,7 +6,8 @@
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "test": "jest",
     "android": "react-native run-android",
-    "reverse": "adb reverse tcp:8081 tcp:8081"
+    "reverse": "adb reverse tcp:8081 tcp:8081",
+    "build": "cd android && ./gradlew bundleRelease"
   },
   "dependencies": {
     "babel-plugin-transform-remove-console": "^6.9.4",
