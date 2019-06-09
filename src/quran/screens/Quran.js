@@ -4,6 +4,10 @@ import { View, Text, FlatList, ActivityIndicator, TouchableHighlight } from 'rea
 import { Fetch } from '../../public/services';
 
 class Quran extends Component {
+  static navigationOptions = ({ navigation }) => ({
+    title: navigation.getParam('title')
+  });
+
   constructor(props) {
     super(props);
     this.state = {
@@ -34,7 +38,13 @@ class Quran extends Component {
                 borderBottomWidth: 1,
                 alignItems: 'center'
               }}
-              onPress={() => this.props.navigation.navigate('Surah', { number: item.number })}
+              underlayColor="#e4e4e4"
+              onPress={() =>
+                this.props.navigation.navigate('Surah', {
+                  number: item.number,
+                  title: item.englishName
+                })
+              }
             >
               <Text style={{ fontSize: 18 }}>
                 {item.number}. {item.englishName} ({item.name})

@@ -4,6 +4,10 @@ import { View, Text, ActivityIndicator, FlatList } from 'react-native';
 import { Fetch } from '../../public/services';
 
 class Surah extends Component {
+  static navigationOptions = ({ navigation }) => ({
+    title: navigation.getParam('title')
+  });
+
   constructor() {
     super();
     this.state = {

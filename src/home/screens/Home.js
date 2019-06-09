@@ -8,13 +8,13 @@ class Home extends Component {
         <View style={{ flexDirection: 'row', justifyContent: 'space-around' }}>
           <TouchableHighlight
             style={styles.button}
-            onPress={() => this.props.navigation.navigate('Quran')}
+            onPress={() => this.props.navigation.navigate('Quran', { title: 'Al-Quran' })}
           >
             <Text>Al-Quran</Text>
           </TouchableHighlight>
           <TouchableHighlight
             style={styles.button}
-            onPress={() => this.props.navigation.navigate('Tasbih')}
+            onPress={() => this.props.navigation.navigate('Tasbih', { title: 'Tasbih' })}
           >
             <Text>Tasbih</Text>
           </TouchableHighlight>
